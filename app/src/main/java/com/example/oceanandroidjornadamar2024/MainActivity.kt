@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             if(etNome.text.isNotBlank()){
                 tvResultado.text = etNome.text
             }else {
-                etNome.error = "Digite um nome válido!"
+                etNome.error = getString(R.string.insert_a_valid_name)
             }
         }
 
