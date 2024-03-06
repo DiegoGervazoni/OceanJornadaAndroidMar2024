@@ -1,5 +1,6 @@
 package com.example.oceanandroidjornadamar2024
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,6 +25,16 @@ class MainActivity : AppCompatActivity() {
             }else {
                 etNome.error = "Digite um nome válido!"
             }
+        }
+
+        // Comportamento do botao abrir nova tela
+        val btAbrirNovaTela =  findViewById<Button>(R.id.btAbrirNovaTela)
+
+        btAbrirNovaTela.setOnClickListener {
+
+            val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+
+            startActivity(novaTelaIntent)
         }
     }
 }
