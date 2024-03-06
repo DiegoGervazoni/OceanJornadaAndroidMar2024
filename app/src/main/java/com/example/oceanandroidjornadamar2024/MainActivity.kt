@@ -3,6 +3,7 @@ package com.example.oceanandroidjornadamar2024
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -13,10 +14,16 @@ class MainActivity : AppCompatActivity() {
         // Procura pelo ID com o findViewer
         val btnEnviar = findViewById<Button>(R.id.btnEnviar)
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
+        val etNome = findViewById<EditText>(R.id.etNome)
 
         // Para criar um Listener
         btnEnviar.setOnClickListener{
-            tvResultado.text = "E lá vamos nós!"
+
+            if(etNome.text.isNotBlank()){
+                tvResultado.text = etNome.text
+            }else {
+                etNome.error = "Digite um nome válido!"
+            }
         }
     }
 }
