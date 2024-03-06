@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
             val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
 
+            novaTelaIntent.putExtra("NOME_DIGITADO", etNome.text.toString())
+
             startActivity(novaTelaIntent)
         }
     }
